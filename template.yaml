@@ -73,6 +73,7 @@ Resources:
         - todo-api/delete_todo
       SupportedIdentityProviders:
         - COGNITO
+    DependsOn: MyCognitoUserPoolResourceServer
 
   MyCognitoUserPoolResourceServer:
     Type: AWS::Cognito::UserPoolResourceServer
@@ -134,7 +135,6 @@ Resources:
               Authorizer: MyCognitoAuthorizer
               AuthorizationScopes:
                 - todo-api/read-todo
-
 
 Outputs:
   TodoServiceApi:
